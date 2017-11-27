@@ -1,0 +1,8 @@
+.jumbotron{
+  box-shadow: 10px 5px 20px 2px lightslategrey;
+  text-align: center;
+}
+
+.article-btn {
+  margin-right: 5px;
+}

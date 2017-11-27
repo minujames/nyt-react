@@ -1,27 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => 
 <div className="container">
   <nav className="navbar navbar-inverse navbar-top">
     <div className="container-fluid">
-      <div className="navbar-header">
-        <a href="/" className="navbar-brand">NYT-React</a>
-        <ul className="nav navbar-nav navbar-right">
-          <li className="nav-item">
-            <a className="nav-link" href="/api/search">Search</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/api/saved">Saved Articles</a>
-          </li>
-        </ul>
-      </div>
+      <Link className="nav navbar-brand" to="#">NYT-React</Link>
+      
+      <ul className="nav navbar-nav navbar-right">
+        <li className={window.location.pathname === "/search" ? "active" : ""}>
+          <Link to="/search">Search</Link>
+        </li>
+        <li className={window.location.pathname === "/saved" ? "active" : ""}>
+          <Link to="/saved">Saved Articles</Link>
+        </li>
+      </ul>
     </div>
   </nav>
 
   <div>
-    <div className="jumbotron">
-    <h1>NYT-React</h1> 
-    <p>New York Times Articles</p> 
+    <div className="jumbotron ">
+      <h2>New York Times Articles Scrubber (ReactJS)</h2> 
+      <p>Search for and save articles</p> 
     </div>
   </div>
 
