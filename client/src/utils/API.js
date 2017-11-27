@@ -17,8 +17,20 @@ export default {
     return axios.get("/api/article");
   },
 
+  getArticleNotes: (id) => {
+    return axios.get("/api/article/" + id)
+  },
+
   removeArticle: id => {
     return axios.delete("/api/article/" + id)
+  },
+
+  addArticleNote: (articleId, noteObj) => {
+    return axios.post("/api/note/" + articleId, noteObj)
+  },
+
+  removeArticleNote: (noteId, articleId) => {
+    return axios.delete("/api/note/" + noteId + "/" + articleId)
   }
 };
 
