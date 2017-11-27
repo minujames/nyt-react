@@ -1,8 +1,9 @@
 import React from 'react';
 import Article from '../Article'
 
-const SearchResults = props => (
-  <div className='container'>
+const SearchResults = props => {
+
+  return (<div className='container'>
     <div className='panel panel-primary'>
       <div className='panel-heading'>
         <h3 className='panel-title'>Results</h3>
@@ -25,8 +26,8 @@ const SearchResults = props => (
       }
       </ul>
     </div>
-  </div>
-);
+  </div>);
+};
 
 
 export default SearchResults;

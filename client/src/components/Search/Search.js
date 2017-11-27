@@ -7,7 +7,8 @@ class Search extends Component {
   state = {
     topic: "Christmas",
     startYear: "2015",
-    endYear: "2017"
+    endYear: "2017",
+    articles: null
   }
 
   handleInputChange = event => {
@@ -18,11 +19,15 @@ class Search extends Component {
   }
 
   handleFormSubmit = (event) => {
+
     event.preventDefault();
     API.search(this.state.topic, this.state.startYear, this.state.endYear)
     .then((res) => {
+      this.setState({ articles: []})
       this.setState({ articles: res.data.response.docs})
     })
+    .catch(err => console.log(err));
+
   }
 
   render() {
